@@ -39,18 +39,19 @@ struct PuzzleView: View {
         var number: String
         var id: Int
         var body: some View {
-            if (id != 0) {
+
                 ZStack {
+                    if (id != 0) {
                     Rectangle()
                         .stroke()
                         .foregroundColor(Color.white)
-                        .padding()
                     Text(number)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding()
-                } .background(Color.green)
-            }
+                }
+            }.background(Color.green)
+            
         }
     }
 }
