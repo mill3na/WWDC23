@@ -19,11 +19,36 @@ struct PuzzleModel {
         }
         
         puzzles.shuffle()
+        puzzlefuncao2()
         
+    }
+    
+    mutating func funcao(algo: Puzzle) {
+        if let coisa1 = puzzlefuncao1(id: 0) {
+            if let coisa2 = puzzlefuncao1(id: algo.id) {
+                puzzles.swapAt(coisa1, coisa2)
+                puzzlefuncao2()
+            }
+        }
+    }
+    
+    mutating func puzzlefuncao2() {
+        for index in puzzles.indices {
+            puzzles[index].boolean = puzzles[index].id == index + 1 ? true : false
+        }
+    }
+    
+    func puzzlefuncao1(id: Int) -> Int? {
+        for index in puzzles.indices {
+            if puzzles[index].id == id {
+                return index
+            }
+        }
+        return nil
     }
     struct Puzzle: Identifiable {
         let id: Int
         let strings: String
-        let boolean: Bool = false
+        var boolean: Bool = false
     }
 }

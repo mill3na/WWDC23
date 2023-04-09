@@ -15,6 +15,12 @@ struct PuzzleView: View {
             LazyVGrid(columns: [GridItem(.fixed(80)), GridItem(.fixed(80)), GridItem(.fixed(80))]) {
                 ForEach(puzzleM.puzzles) { puzzle in
                     cardView(number: puzzle.strings, id: puzzle.id)
+                        .background(puzzle.boolean ? Color.green : Color.gray)
+                        .onTapGesture {
+                            withAnimation {
+                                puzzleM.funcao(parametro: puzzle)
+                            }
+                        }
                     
                 }
             }
@@ -48,10 +54,10 @@ struct PuzzleView: View {
                     Text(number)
                         .font(.largeTitle)
                         .fontWeight(.bold)
+                        .foregroundColor(.white)
                         .padding()
                 }
-            }.background(Color.green)
-            
+            }//.background(Color.green)
         }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 class PuzzleViewModel: ObservableObject {
-    static var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"]
+    static var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     @Published var puzzleModel: PuzzleModel
     
     
@@ -17,13 +17,17 @@ class PuzzleViewModel: ObservableObject {
     }
 
     static func puzzleSomething() -> PuzzleModel {
-        return PuzzleModel(puzzleInt: 16) { puzzleIndex in
+        return PuzzleModel(puzzleInt: 13) { puzzleIndex in
             PuzzleViewModel.numbers[puzzleIndex]
         }
     }
     
     func newGame() {
         puzzleModel = PuzzleViewModel.puzzleSomething()
+    }
+    
+    func funcao(parametro: PuzzleModel.Puzzle) {
+        puzzleModel.funcao(algo: parametro)
     }
     
     var puzzles: Array<PuzzleModel.Puzzle> {
