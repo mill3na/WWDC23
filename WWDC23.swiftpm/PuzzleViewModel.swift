@@ -26,8 +26,8 @@ class PuzzleViewModel: ObservableObject {
         puzzleModel = PuzzleViewModel.puzzleSomething()
     }
     
-    func funcao(parametro: PuzzleModel.Puzzle) {
-        puzzleModel.funcao(algo: parametro)
+    func swapPositions(parametro: PuzzleModel.Puzzle) {
+        puzzleModel.swapPositions(puzzle: parametro)
     }
     
     var puzzles: Array<PuzzleModel.Puzzle> {

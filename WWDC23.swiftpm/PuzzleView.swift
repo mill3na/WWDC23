@@ -14,11 +14,11 @@ struct PuzzleView: View {
         VStack {
             LazyVGrid(columns: [GridItem(.fixed(80)), GridItem(.fixed(80)), GridItem(.fixed(80))]) {
                 ForEach(puzzleM.puzzles) { puzzle in
-                    cardView(number: puzzle.strings, id: puzzle.id)
-                        .background(puzzle.boolean ? Color.green : Color.gray)
+                    CardView(number: puzzle.number, id: puzzle.id)
+                        .background(puzzle.rightPosition ? Color.green : Color.gray)
                         .onTapGesture {
                             withAnimation {
-                                puzzleM.funcao(parametro: puzzle)
+                                puzzleM.swapPositions(parametro: puzzle)
                             }
                         }
                     
@@ -41,7 +41,7 @@ struct PuzzleView: View {
         }
     }
     
-    struct cardView: View {
+    struct CardView: View {
         var number: String
         var id: Int
         var body: some View {
@@ -57,7 +57,7 @@ struct PuzzleView: View {
                         .foregroundColor(.white)
                         .padding()
                 }
-            }//.background(Color.green)
+            }
         }
     }
 }
