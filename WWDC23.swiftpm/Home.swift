@@ -124,7 +124,7 @@ struct Home: View {
                 ZStack {
                     Image(history.imageName)
                         .resizable()
-                        .frame(width: size.width, height: size.height / 1.5)
+                        .frame(width: size.width, height: size.height / 1.2)
                         .aspectRatio(contentMode: .fill)
                     //                    .clipped()
                 }

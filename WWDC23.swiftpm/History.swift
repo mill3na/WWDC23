@@ -17,7 +17,7 @@ struct History: Hashable, Identifiable {
 }
 
 var sampHistories: [History] = [
-    .init(title: "Don Quixote", imageName: "image1", choreographer: "Marius Petipa e Alexander, 1869", historyImages: ["dq-dulcineia", "dq-sp"]),
+    .init(title: "Don Quixote", imageName: "image1", choreographer: "Marius Petipa e Alexander, 1869", historyImages: ["dq-dulcineia", "dulcineia", "dq-sp"]),
     .init(title: "Quebra Nozes", imageName: "image2", choreographer: "Petipa 2", historyImages: ["dq-dulcineia", "dq-sp"]),
     .init(title: "Lago dos Cisnes", imageName: "image3", choreographer: "Petipa 3", historyImages: ["dq-dulcineia", "dq-sp"]),
     .init(title: "Bela adormecida", imageName: "image4", choreographer: "Petipa 4", historyImages: ["dq-dulcineia", "dq-sp"]),
