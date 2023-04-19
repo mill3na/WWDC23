@@ -44,7 +44,7 @@ struct PuzzleView: View {
         var number: String
         var id: Int
         var body: some View {
-
+            VStack {
                 ZStack {
                     if (id != 0) {
                     Rectangle()
@@ -58,6 +58,10 @@ struct PuzzleView: View {
 //                        .fontWeight(.bold)
 //                        .foregroundColor(.white)
                         .padding()
+                }
+            }
+                .onAppear {
+                    SoundManager.instance.playSound(with: "entree")
                 }
             }
         }

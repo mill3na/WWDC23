@@ -10,7 +10,7 @@ import AppleProductTypes
 let package = Package(
     name: "WWDC23",
     platforms: [
-        .iOS("15.2")
+        .iOS("16")
     ],
     products: [
         .iOSApplication(
@@ -37,7 +37,10 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "AppModule",
-            path: "."
+            path: ".",
+            resources: [
+                .process("Resources")
+            ]
         )
     ]
 )

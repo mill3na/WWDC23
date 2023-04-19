@@ -22,7 +22,7 @@ struct Home: View {
                 historyDetailView()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        }
+        }.navigationViewStyle(.stack)
     }
     
     @ViewBuilder
@@ -104,12 +104,12 @@ struct Home: View {
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
-        .background {
-            Image("bg")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .opacity(0.6)
-        }
+//        .background {
+//            Image("bg")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .opacity(0.6)
+//        }
         
     }
     
@@ -124,9 +124,7 @@ struct Home: View {
                 ZStack {
                     Image(history.imageName)
                         .resizable()
-                        .frame(width: size.width, height: size.height / 1.2)
-                        .aspectRatio(contentMode: .fill)
-                    //                    .clipped()
+                        .aspectRatio(contentMode: .fit)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
@@ -144,21 +142,6 @@ struct Home: View {
                 .foregroundColor(.black.opacity(0.7))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Button {
-                
-            } label: {
-                Image(systemName: "books.vertical")
-                    .font(.title3)
-                    .foregroundColor(.gray)
-            }
-            
-            Button {
-                
-            } label: {
-                Image(systemName: "book.closed")
-                    .font(.title3)
-                    .foregroundColor(.gray)
-            }
         }
         .padding(15)
     }
